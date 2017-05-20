@@ -5,3 +5,7 @@ from django.http import HttpResponse
 # Create your views here.
 def index(request):
     return render(request, 'webapp/home.html')
+
+
+def polls(request):
+    return render(request, 'webapp/polls.html')
