@@ -1,4 +1,15 @@
 {%  extends "header.html" %}
 {% block content %}
     <p>Here is the content that is in polls.html file.</p>
+    {% if latest_question_list %}
+        <ul>
+            {% for latest_question in latest_question_list %}
+                <li>
+                    <a href="{% url 'polls_detail' latest_question.id %}">
+                        {{ latest_question.question_text }}
+                    </a>
+                </li>
+            {% endfor %}
+        </ul>
+    {% endif %}
 {% endblock %}
