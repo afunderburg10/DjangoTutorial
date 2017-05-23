@@ -9,3 +9,18 @@ def index(request):
 
 def polls(request):
     return render(request, 'webapp/polls.html')
+
+
+def polls_detail(request):
+    return HttpResponse('<h1>Polls Detail Page</h1>')
+    # return render(request, 'webapp/polls.html')
+
+
+def polls_results(request):
+    return HttpResponse('<h1>Polls Results Page</h1>')
+    return render(request, 'webapp/polls.html')
+
+
+def polls_vote(request):
+    return HttpResponse('<h1>Polls Detail Page</h1>')
+    return render(request, 'webapp/polls.html')
