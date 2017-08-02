@@ -4,7 +4,7 @@
     <h1>Polls Detail Page</h1>
     <h2>Question ID: {{ question.id }}</h2>
     <h3>Question Text: {{ question.question_text }}</h3>
-    <a href="{% url 'polls_results' question.id %}">
+    <a href="{% url 'polls:results' question.id %}">
         View Results
     </a>
 {% endblock %}

@@ -1,5 +1,9 @@
 {%  extends "header.html" %}
 {% block content %}
+    <h1>Check out these apps!!</h1>
+    <ul id="appList">
+        <li><a href="{% url 'polls:home' %}">Polls</a></li>
+    </ul>
     <p>Here is the content that is in home.html file.</p>
     {% include "includes/htmlsnippets.html" %}
 {% endblock %}

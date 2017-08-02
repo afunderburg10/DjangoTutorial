@@ -16,13 +16,14 @@ Including another URLconf
 from django.conf.urls import url, include
 from . import views
 
+app_name = 'polls'
 urlpatterns = [
     # ex: <site>/webapp/polls
-    url(r'^$', views.polls, name='polls'),
+    url(r'^$', views.polls, name='home'),
     # ex: <site>/webapp/polls/5/
-    url(r'^(?P<question_id>[0-9]+)/$', views.polls_detail, name='polls_detail'),
+    url(r'^(?P<question_id>[0-9]+)/$', views.polls_detail, name='detail'),
     # ex: <site>/webapp/polls/5/results/
-    url(r'^(?P<question_id>[0-9]+)/results/$', views.polls_results, name='polls_results'),
+    url(r'^(?P<question_id>[0-9]+)/results/$', views.polls_results, name='results'),
     # ex: <site>/webapp/polls/5/vote/
-    url(r'^(?P<question_id>[0-9]+)/vote/$', views.polls_vote, name='polls_vote'),
+    url(r'^(?P<question_id>[0-9]+)/vote/$', views.polls_vote, name='vote'),
 ]
