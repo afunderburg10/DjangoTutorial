@@ -6,10 +6,6 @@ from django.http import HttpResponse
 from webapp.models import Question
 
 
-def index(request):
-    return render(request, 'webapp/home.html')
-
-
 def polls(request):
     latest_question_list = Question.objects.order_by('-pub_date')[:5]
     context = {
