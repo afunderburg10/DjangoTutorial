@@ -1,9 +1,12 @@
+from django.http.response import HttpResponseRedirect
 from django.shortcuts import render, get_object_or_404
 from django.http import HttpResponse
 
 
 # Create your views here.
-from webapp.models import Question
+from django.urls import reverse
+
+from webapp.models import Question, Choice
 
 
 def polls(request):
@@ -33,5 +36,18 @@ def polls_results(request, question_id):
 
 
 def polls_vote(request, question_id):
-    return HttpResponse('<h1>Polls Vote Page</h1><h2>Question ID: {0}</h2>'.format(question_id))
-    # return render(request, 'webapp/polls.html')
+    question = get_object_or_404(Question, pk=question_id)
+    try:
+        selected_choice = question.choice_set.get(pk=request.POST['choice'])
+    except(KeyError, Choice.DoesNotExist):
+        context = {
+            'question': question,
+            'error_message': 'You didn\'t select a choice.'
+        }
+        return render(request, 'webapp/polls_detail.html', context=context)
+    else:
+        selected_choice.votes += 1
+        selected_choice.save()
+        # Always return an HttpResponseRedirect after successfully dealing
+        # with POST data. This prevents data from being posted twice if a user hits the Back button.
+        return HttpResponseRedirect(reverse('polls:results', args=(question.id,)))
