@@ -1,9 +1,7 @@
-{%  extends "header.html" %}
-{% block content %}
+{% extends "main.html" %}
+{% block jumbotronContent %}
     <h1>Check out these apps!!</h1>
-    <ul id="appList">
-        <li><a href="{% url 'polls:home' %}">Polls</a></li>
-    </ul>
-    <p>Here is the content that is in home.html file.</p>
-    {% include "includes/htmlsnippets.html" %}
+    <p>Apps that require login are under "Private Apps".</p>
+    <p>Apps that don't are public.</p>
+    <p>Simple.</p>
 {% endblock %}

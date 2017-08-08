@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>{% block title %}Default Title{% endblock %}</title>
+    <meta charset="utf-8"/>
+    {% load staticfiles %}
+    <link rel="stylesheet" href="{% static 'css/bootstrap.min.css' %}" type="text/css">
+    <link rel="stylesheet" href="{% static 'src/css/main.css' %}" type="text/css">
+    <script
+            src="https://code.jquery.com/jquery-3.2.1.min.js"
+            integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
+            crossorigin="anonymous">
+    </script>
+    <script src="{% static 'js/bootstrap.min.js' %}">
+    </script>
+    {% block header_additional %}
+    {% endblock %}
+</head>
+<body class="body">
+{% include "includes/navbar.html" %}
+
+<div class="container">
+    <div class="jumbotron">
+        {% block jumbotronContent %}
+        {% endblock %}
+    </div>
+</div>
+<div class="container">
+    {% block bodyContent %}
+    {% endblock %}
+
+
+    <hr>
+    <footer>
+        <p>&copy; 2016 Company, Inc.</p>
+        {% block footerContent %}
+        {% endblock %}
+    </footer>
+</div> <!-- /container -->
+
+</body>
+</html>
