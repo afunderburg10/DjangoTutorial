@@ -1,0 +1,32 @@
+{% extends "main.html" %}
+{% block jumbotronContent %}
+    <h1>Site Todo</h1>
+{% endblock %}
+
+{% block bodyContent %}
+    <div class="row">
+        <div class="col-md-12">
+            <table class="table">
+                <thead>
+                    <tr>
+                        <td>Item #</td>
+                        <td>Description</td>
+                        <td>Status</td>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>1</td>
+                        <td>Finish Django Tutorial Steps</td>
+                        <td>In-Progress</td>
+                    </tr>
+                    <tr>
+                        <td>2</td>
+                        <td>Make TODO App</td>
+                        <td>New</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+{% endblock %}
