@@ -20,6 +20,17 @@ def home(request):
 # TODO - needs new html page - similar or same page as create
 # TODO - Add edit button to row in Home Page
 
+
+def edit(request, pk):
+    if int(pk) < 1:
+        title = 'New'
+    else:
+        title = 'Edit'
+    context = {
+        'title': title
+    }
+    return render(request, 'todo/edit.html', context=context)
+
 # TODO - Create View
 # TODO - needs new html page
 # TODO - Add button to Create View to Home page
