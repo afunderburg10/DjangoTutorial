@@ -29,4 +29,27 @@
             </table>
         </div>
     </div>
+    <div class="row">
+        <div class="col-md-12">
+            <table class="table">
+                <thead>
+                    <tr>
+                        <td>Sort #</td>
+                        <td>Description</td>
+                        <td>Status</td>
+                    </tr>
+                </thead>
+                <tbody>
+                {% for todo in todos %}
+                    <tr>
+                        <td>{{ todo.sort_order }}</td>
+                        <td>{{ todo.text }}</td>
+                        <td>{{ todo.status }}</td>
+                    </tr>
+                {% endfor %}
+                </tbody>
+            </table>
+        </div>
+    </div>
+
 {% endblock %}
