@@ -18,12 +18,12 @@ from . import views
 
 app_name = 'polls'
 urlpatterns = [
-    # ex: <site>/webapp/polls
+    # ex: <site>/polls
     url(r'^$', views.polls, name='home'),
-    # ex: <site>/webapp/polls/5/
+    # ex: <site>/polls/5/
     url(r'^(?P<question_id>[0-9]+)/$', views.polls_detail, name='detail'),
-    # ex: <site>/webapp/polls/5/results/
+    # ex: <site>/polls/5/results/
     url(r'^(?P<question_id>[0-9]+)/results/$', views.polls_results, name='results'),
-    # ex: <site>/webapp/polls/5/vote/
+    # ex: <site>/polls/5/vote/
     url(r'^(?P<question_id>[0-9]+)/vote/$', views.polls_vote, name='vote'),
 ]
