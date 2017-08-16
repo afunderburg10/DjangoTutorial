@@ -8,6 +8,7 @@ from todo.models import ToDoItem
 
 
 def home(request):
+    # TODO - Add button to New View to Home page
     todo_list = ToDoItem.objects.order_by('sort_order')
     context = {
         'todos': todo_list
@@ -18,12 +19,10 @@ def home(request):
 # TODO - Add delete button to row in Home Page
 # TODO - have home page give an alert for confirmation of delete
 
-# TODO - Edit View
-# TODO - needs new html page - similar or same page as create
-# TODO - Add edit button to row in Home Page
-
 
 def detail(request, pk):
+    # TODO - wire up data from DB
+    # TODO - make detail.html look decent with info
     context = {
         'title': pk,
         'text': 'DUMMY TEXT'
@@ -53,12 +52,9 @@ def new(request):
 
 
 def edit(request, pk):
+    # TODO - needs new html page - similar or same page as create
+    # TODO - Add edit button to row in Home Page
     context = {
         'title': 'Edit'
     }
     return render(request, 'todo/edit.html', context=context)
-
-# TODO - Create View
-# TODO - needs new html page
-# TODO - Add button to Create View to Home page
-
