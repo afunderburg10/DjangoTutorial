@@ -44,6 +44,8 @@ def new(request):
         # New page visit
         form = ToDoItemForm()
 
+    for field in form.fields:
+        form.fields[field].widget.attrs['class'] = 'form-control'
     context = {
         'form': form,
         'title': 'New'
