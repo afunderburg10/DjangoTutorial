@@ -15,6 +15,7 @@ class ToDoItem(models.Model):
     text = models.CharField(max_length=500)
     create_date = models.DateField('date created', null=True, default=timezone.now)
     due_date = models.DateField('date due', null=True, blank=True)
+    user = models.ForeignKey('auth.User')
 
     def __str__(self):
         return self.text

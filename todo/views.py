@@ -1,7 +1,9 @@
-from django.shortcuts import render
-
+from django.shortcuts import render, redirect
 
 # Create your views here.
+from django.utils import timezone
+
+from todo.forms import ToDoItemForm
 from todo.models import ToDoItem
 
 
@@ -21,13 +23,38 @@ def home(request):
 # TODO - Add edit button to row in Home Page
 
 
-def edit(request, pk):
-    if int(pk) < 1:
-        title = 'New'
-    else:
-        title = 'Edit'
+def detail(request, pk):
     context = {
-        'title': title
+        'title': pk,
+        'text': 'DUMMY TEXT'
+    }
+    return render(request, 'todo/detail.html', context=context)
+
+
+def new(request):
+    if request.method == 'POST':
+        # Form submission logic
+        form = ToDoItemForm(request.POST)
+        if form.is_valid():
+            todo_item = form.save(commit=False)
+            todo_item.user = request.user
+            todo_item.create_date = timezone.now()
+            todo_item.save()
+            return redirect('todo:detail', pk=todo_item.pk)
+    else:
+        # New page visit
+        form = ToDoItemForm()
+
+    context = {
+        'form': form,
+        'title': 'New'
+    }
+    return render(request, 'todo/edit.html', context=context)
+
+
+def edit(request, pk):
+    context = {
+        'title': 'Edit'
     }
     return render(request, 'todo/edit.html', context=context)
 
