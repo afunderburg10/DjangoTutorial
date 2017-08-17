@@ -20,9 +20,11 @@
 {% include "includes/navbar.html" %}
 
 <div class="container">
-    <div class="jumbotron">
-        {% block jumbotronContent %}
-        {% endblock %}
+    <div class="jumbotron jumbotron-fluid">
+        <div class="container">
+            {% block jumbotronContent %}
+            {% endblock %}
+        </div>
     </div>
 </div>
 <div class="container">

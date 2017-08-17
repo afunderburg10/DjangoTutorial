@@ -3,19 +3,23 @@
     To-Do - {{ title }}
 {% endblock %}
 {% block jumbotronContent %}
-    <h1>To-Do - {{ title }}</h1>
+    <h2>To-Do - {{ title }}</h2>
 {% endblock %}
 {% block bodyContent %}
-    <h2>Create / Edit Your To-Do</h2>
+    <h3>Create / Edit Your To-Do</h3>
     {% if error_message %}
         <p><strong>{{ error_message }}</strong></p>
     {% endif %}
-
-    <form method="post" class="post-form">
-            {% csrf_token %}
-            {{ form.as_p }}
+    <form method="post">
+        {% csrf_token %}
+        {% for field in form %}
+            <div class="form-group row">
+                <label class="col-sm-2 col-form-label" for="id_{{ field.name }}">{{ field.label }}</label>
+                <div class="col-sm-10">
+                    {{ field }}
+                </div>
+            </div>
+        {% endfor %}
         <button type="submit" class="btn btn-primary">Save</button>
-
     </form>
-
 {% endblock %}

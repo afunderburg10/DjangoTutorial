@@ -46,6 +46,7 @@ def new(request):
 
     for field in form.fields:
         form.fields[field].widget.attrs['class'] = 'form-control'
+    form.fields['due_date'].widget.input_type = 'date'
     context = {
         'form': form,
         'title': 'New'
