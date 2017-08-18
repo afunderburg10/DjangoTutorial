@@ -4,28 +4,28 @@
 {% endblock %}
 
 {% block bodyContent %}
-    <div class="row">
-        <a class="btn btn-primary">Create New Todo</a>
-        <div class="col-md-12">
-            <table class="table">
-                <thead class="thead-inverse">
-                    <tr>
-                        <th>Sort #</th>
-                        <th>Description</th>
-                        <th>Status</th>
-                    </tr>
-                </thead>
-                <tbody>
-                {% for todo in todos %}
-                    <tr>
-                        <td>{{ todo.sort_order }}</td>
-                        <td>{{ todo.text }}</td>
-                        <td>{{ todo.status }}</td>
-                    </tr>
-                {% endfor %}
-                </tbody>
-            </table>
-        </div>
+    <div class="row col-md-12">
+        <a class="btn btn-primary mx-auto btn-block" href="{% url 'todo:new' %}">Create New Todo</a>
+
+        <table class="table table-striped">
+            <thead class="thead-inverse">
+            <tr>
+                <th>Sort #</th>
+                <th>Description</th>
+                <th>Status</th>
+            </tr>
+            </thead>
+            <tbody>
+            {% for todo in todos %}
+                <tr>
+                    <td>{{ todo.sort_order }}</td>
+                    <td>{{ todo.text }}</td>
+                    <td>{{ todo.status }}</td>
+                </tr>
+            {% endfor %}
+            </tbody>
+        </table>
+
     </div>
 
 {% endblock %}
