@@ -1,113 +1,57 @@
-<nav class="navbar navbar-inverse navbar-fixed-top">
-    <div class="container">
-        <div class="navbar-header">
-            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
-                <span class="sr-only">Toggle navigation</span>
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-            </button>
-            <a class="navbar-brand" href="{% url 'home' %}">Adam Site</a>
-        </div>
-        <div id="navbar" class="navbar-collapse collapse">
-            <ul class="nav navbar-nav">
-                {#                <li class="active"><a href="#">Link</a></li>#}
-                {#                <li><a href="#">Link 2</a></li>#}
+<nav class="navbar navbar-expand-lg bg-dark fixed-top f">
+    <a class="navbar-brand" href="{% url 'home' %}">Adam Site</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="nav navbar-nav">
+            <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    Example Pages
+                </a>
+                <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink1">
+                    <a class="dropdown-item" href="{% url 'example_template' %}">Template</a>
+                    <a class="dropdown-item" href="{% url 'todo:home' %}">To-Do</a>
+                </div>
+            </li>
+            <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    Public Apps
+                </a>
+                <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink2">
+                    <a class="dropdown-item" href="{% url 'polls:home' %}">Polls</a>
+                </div>
+            </li>
 
-                <li class="dropdown">
-                    <a href="#" class="dropdown-toggle" data-toggle="dropdown"
-                       role="button" aria-haspopup="true" aria-expanded="false">Example Pages<span class="caret"></span></a>
-                    <ul class="dropdown-menu">
-                        <li><a href="{% url 'example_template' %}">Template</a></li>
-                        <li><a href="{% url 'todo:home' %}">To-Do</a></li>
-                    </ul>
-                </li>
-                <li class="dropdown">
-                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Public Apps<span class="caret"></span></a>
-                    <ul class="dropdown-menu">
-                        <li><a href="{% url 'polls:home' %}">Polls</a></li>
-                    </ul>
-                </li>
-                <li class="dropdown">
-                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Private Apps<span class="caret"></span></a>
-                    <ul class="dropdown-menu">
-                        <li><a href="#">Link 1</a></li>
-                        <li><a href="#">Link 2</a></li>
-                        <li><a href="#">Link 3</a></li>
-                        <li role="separator" class="divider"></li>
-                        <li><a href="#">Separated link</a></li>
-                        <li role="separator" class="divider"></li>
-                        <li><a href="#">One more separated link</a></li>
-                    </ul>
-                </li>
-            </ul>
-            <form class="navbar-form navbar-right">
-                <div class="form-group">
-                    <input type="text" placeholder="Email" class="form-control">
+            <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink3" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    Private Apps
+                </a>
+                <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink3">
+                    <a class="dropdown-item" href="#">Link 1</a>
+                    <a class="dropdown-item" href="#">Link 2</a>
+                    <a class="dropdown-item" href="#">Link 3</a>
                 </div>
-                <div class="form-group">
-                    <input type="password" placeholder="Password" class="form-control">
-                </div>
-                <button type="submit" class="btn btn-success">Sign in</button>
-            </form>
-        </div><!--/.navbar-collapse -->
-    </div>
-</nav>
-{#<div class="container">#}
-{#    <nav class="navbar navbar-expand-lg navbar-light bg-light">#}
-{#        <a class="navbar-brand" href="{% url 'home' %}">Adam Site</a>#}
-{#        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">#}
-{#            <span class="navbar-toggler-icon"></span>#}
-{#        </button>#}
-{#        <div class="collapse navbar-collapse" id="navbarNav">#}
-{#            <ul class="nav navbar-nav">#}
-{#                <li class="nav-item dropdown">#}
-{#                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">#}
-{#                        Example Pages#}
-{#                    </a>#}
-{#                    <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink1">#}
-{#                        <a class="dropdown-item" href="{% url 'example_template' %}">Template</a>#}
-{#                        <a class="dropdown-item" href="{% url 'todo:home' %}">To-Do</a>#}
-{#                    </div>#}
-{#                </li>#}
-{#                <li class="nav-item dropdown">#}
-{#                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">#}
-{#                        Public Apps#}
-{#                    </a>#}
-{#                    <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink2">#}
-{#                        <a class="dropdown-item" href="{% url 'polls:home' %}">Polls</a>#}
-{#                    </div>#}
-{#                </li>#}
-{##}
-{#                <li class="nav-item dropdown">#}
-{#                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink3" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">#}
-{#                        Private Apps#}
-{#                    </a>#}
-{#                    <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink3">#}
-{#                        <a class="dropdown-item" href="#">Link 1</a>#}
-{#                        <a class="dropdown-item" href="#">Link 2</a>#}
-{#                        <a class="dropdown-item" href="#">Link 3</a>#}
-{#                    </div>#}
-{#                </li>#}
-{#            </ul>#}
-{#            <form class="form-inline">#}
-{#                    <input type="text" placeholder="Email" class="form-control mr-sm-2">#}
-{#                    <input type="password" placeholder="Password" class="form-control mr-sm-2">#}
-{#                <button type="submit" class="btn btn-outline-success my-2 my-sm-0">Sign in</button>#}
-{#            </form>#}
-            {#    <ul class="navbar-nav">#}
-            {#      <li class="nav-item active">#}
-            {#        <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>#}
-            {#      </li>#}
-            {#      <li class="nav-item">#}
-            {#        <a class="nav-link" href="#">Features</a>#}
-            {#      </li>#}
-            {#      <li class="nav-item">#}
-            {#        <a class="nav-link" href="#">Pricing</a>#}
-            {#      </li>#}
-            {#      <li class="nav-item">#}
-            {#        <a class="nav-link disabled" href="#">Disabled</a>#}
-            {#      </li>#}
+            </li>
+        </ul>
+        <form class="form-inline">
+            <input type="text" placeholder="Email" class="form-control mr-sm-2">
+            <input type="password" placeholder="Password" class="form-control mr-sm-2">
+            <button type="submit" class="btn btn-outline-success my-2 my-sm-0">Sign in</button>
+        </form>
+{#        <ul class="navbar-nav">#}
+{#            <li class="nav-item active">#}
+{#                <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>#}
+{#            </li>#}
+{#            <li class="nav-item">#}
+{#                <a class="nav-link" href="#">Features</a>#}
+{#            </li>#}
+{#            <li class="nav-item">#}
+{#                <a class="nav-link" href="#">Pricing</a>#}
+{#            </li>#}
+{#            <li class="nav-item">#}
+{#                <a class="nav-link disabled" href="#">Disabled</a>#}
+{#            </li>#}
 {#            <li class="nav-item dropdown">#}
 {#                <a class="nav-link dropdown-toggle" href="http://example.com" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">#}
 {#                    Dropdown link#}
@@ -118,11 +62,10 @@
 {#                    <a class="dropdown-item" href="#">Something else here</a>#}
 {#                </div>#}
 {#            </li>#}
-            {#        <form class="form-inline">#}
-            {#    <input class="form-control mr-sm-2" type="text" placeholder="Search" aria-label="Search">#}
-            {#    <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>#}
-            {#  </form>#}
-            {#    </ul>#}
-{#        </div>#}
-{#    </nav>#}
-{#</div>#}
+{#            <form class="form-inline">#}
+{#                <input class="form-control mr-sm-2" type="text" placeholder="Search" aria-label="Search">#}
+{#                <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>#}
+{#            </form>#}
+{#        </ul>#}
+    </div>
+</nav>
