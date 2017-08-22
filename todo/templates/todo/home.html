@@ -24,10 +24,10 @@
                     <td>{{ todo.status }}</td>
                     <td class="text-right">
                         <a class="btn btn-sm btn-dark" href="{% url 'todo:delete' todo.id %}" role="button">
-                            DEL
+                            <i class="fa fa-trash"></i>
                         </a>
                         <a class="btn btn-sm btn-dark" href="{% url 'todo:edit' todo.id %}" role="button">
-                            EDIT
+                            <i class="fa fa-edit"></i>
                         </a>
                     </td>
                 </tr>
