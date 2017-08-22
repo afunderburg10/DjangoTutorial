@@ -5,7 +5,10 @@
 
 {% block bodyContent %}
     <div class="row col-md-12">
-        <a class="btn btn-primary mx-auto btn-block" href="{% url 'todo:new' %}">Create New Todo</a>
+        <a class="btn btn-primary mx-auto btn-block" href="{% url 'todo:new' %}">
+            <i class="fa fa-plus-circle"></i>
+                Create New Todo
+        </a>
 
         <table class="table table-striped">
             <thead class="thead-inverse">

@@ -19,17 +19,16 @@ def delete(request, pk):
     todo_item = get_object_or_404(ToDoItem, pk=pk)
     todo_item.delete()
     return redirect('todo:home')
-# TODO - Delete View
-# TODO - Add delete button to row in Home Page
-# TODO - have home page give an alert for confirmation of delete
 
 
 def detail(request, pk):
     # TODO - wire up data from DB
     # TODO - make detail.html look decent with info
+    todo_item = get_object_or_404(ToDoItem, pk=pk)
+
     context = {
-        'title': pk,
-        'text': 'DUMMY TEXT'
+        'title': todo_item.pk,
+        'todo': todo_item
     }
     return render(request, 'todo/detail.html', context=context)
 
@@ -43,7 +42,9 @@ def new(request):
             todo_item.user = request.user
             todo_item.create_date = timezone.now()
             todo_item.save()
-            return redirect('todo:detail', pk=todo_item.pk)
+            return redirect('todo:home')
+            # Put this back when the detail veiw is implemented
+            # return redirect('todo:detail', pk=todo_item.pk)
     else:
         # New page visit
         form = ToDoItemForm()
@@ -59,9 +60,24 @@ def new(request):
 
 
 def edit(request, pk):
-    # TODO - needs new html page - similar or same page as create
-    # TODO - Add edit button to row in Home Page
+    todo_item = get_object_or_404(ToDoItem, pk=pk)
+    if request.method == 'POST':
+        # Form submission logic
+        form = ToDoItemForm(request.POST, instance=todo_item)
+        if form.is_valid():
+            todo_item = form.save(commit=False)
+            todo_item.save()
+            return redirect('todo:home')
+            # Put this back when the detail veiw is implemented
+            # return redirect('todo:detail', pk=todo_item.pk)
+    else:
+        form = ToDoItemForm(instance=todo_item)
+
+    for field in form.fields:
+        form.fields[field].widget.attrs['class'] = 'form-control'
+    form.fields['due_date'].widget.input_type = 'date'
     context = {
+        'form': form,
         'title': 'Edit'
     }
     return render(request, 'todo/edit.html', context=context)
