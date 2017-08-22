@@ -13,6 +13,7 @@
                 <th>Sort #</th>
                 <th>Description</th>
                 <th>Status</th>
+                <th class="text-right">Actions</th>
             </tr>
             </thead>
             <tbody>
@@ -21,6 +22,14 @@
                     <td>{{ todo.sort_order }}</td>
                     <td>{{ todo.text }}</td>
                     <td>{{ todo.status }}</td>
+                    <td class="text-right">
+                        <a class="btn btn-sm btn-dark" href="{% url 'todo:delete' todo.id %}" role="button">
+                            DEL
+                        </a>
+                        <a class="btn btn-sm btn-dark" href="{% url 'todo:edit' todo.id %}" role="button">
+                            EDIT
+                        </a>
+                    </td>
                 </tr>
             {% endfor %}
             </tbody>

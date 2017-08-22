@@ -21,12 +21,14 @@ app_name = 'todo'
 urlpatterns = [
     # ex: <site>/todo
     url(r'^$', views.home, name='home'),
+    # ex: <site>/todo/new
+    url(r'^new/$', views.new, name='new'),
     # # ex: <site>/todo/5
     url(r'^(?P<pk>[0-9]+)/$', views.detail, name='detail'),
     # ex: <site>/todo/5/edit
     url(r'^(?P<pk>[0-9]+)/edit/$', views.edit, name='edit'),
-    # # ex: <site>/todo/new
-    url(r'^new/$', views.new, name='new')
+    # ex: <site>/todo/5/delete
+    url(r'^(?P<pk>[0-9]+)/delete/$', views.delete, name='delete'),
     # url(r'^(?P<question_id>[0-9]+)/results/$', views.polls_results, name='results'),
     # # ex: <site>/polls/5/vote/
     # url(r'^(?P<question_id>[0-9]+)/vote/$', views.polls_vote, name='vote'),

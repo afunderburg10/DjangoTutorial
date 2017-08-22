@@ -1,4 +1,4 @@
-from django.shortcuts import render, redirect
+from django.shortcuts import render, redirect, get_object_or_404
 
 # Create your views here.
 from django.utils import timezone
@@ -8,13 +8,17 @@ from todo.models import ToDoItem
 
 
 def home(request):
-    # TODO - Add button to New View to Home page
     todo_list = ToDoItem.objects.order_by('sort_order')
     context = {
         'todos': todo_list
     }
     return render(request, 'todo/home.html', context=context)
 
+
+def delete(request, pk):
+    todo_item = get_object_or_404(ToDoItem, pk=pk)
+    todo_item.delete()
+    return redirect('todo:home')
 # TODO - Delete View
 # TODO - Add delete button to row in Home Page
 # TODO - have home page give an alert for confirmation of delete
