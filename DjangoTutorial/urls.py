@@ -20,8 +20,11 @@ from django.views.generic import TemplateView
 urlpatterns = [
     url(r'^$', TemplateView.as_view(template_name='home.html'), name='home'),
     url(r'^example_template', TemplateView.as_view(template_name='example_template.html'), name='example_template'),
-    url(r'^lisa_splash', TemplateView.as_view(template_name='lisa_splash.html'), name='lisa_splash'),
     url(r'^todo/', include('todo.urls')),
     url(r'^polls/', include('webapp.urls')),
     url(r'^admin/', admin.site.urls),
+    url(r'^lisa_landing/$', TemplateView.as_view(template_name='lisa_landing/index.html'), name='lisa_landing_home'),
+    url(r'^lisa_landing/about/$', TemplateView.as_view(template_name='lisa_landing/about.html'), name='lisa_landing_about'),
+    url(r'^lisa_landing/services/$', TemplateView.as_view(template_name='lisa_landing/services.html'), name='lisa_landing_services'),
+    url(r'^lisa_landing/contact/$', TemplateView.as_view(template_name='lisa_landing/contact.html'), name='lisa_landing_contact'),
 ]

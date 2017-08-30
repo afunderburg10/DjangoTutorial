@@ -9,7 +9,7 @@
     <meta name="author" content="">
     {% load staticfiles %}
     <link rel="stylesheet" href="{% static 'bootstrap/css/bootstrap.min.css' %}" type="text/css">
-    <link rel="stylesheet" href="{% static 'src/css/landing-page.css' %}" type="text/css">
+    <link rel="stylesheet" href="{% static 'lisa_landing/css/landing-page.css' %}" type="text/css">
     <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
 </head>
 
@@ -18,20 +18,20 @@
     <!-- Navigation -->
     <nav class="navbar navbar-expand-lg navbar-light bg-light fixed-top">
       <div class="container">
-        <a class="navbar-brand" href="#">Start Bootstrap</a>
+        <a class="navbar-brand" href="/">GO HOME</a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
         </button>
         <div class="collapse navbar-collapse" id="navbarResponsive">
           <ul class="navbar-nav ml-auto">
             <li class="nav-item">
-              <a class="nav-link" href="#">About</a>
+              <a class="nav-link" href="/lisa_landing/about">About</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="#">Services</a>
+              <a class="nav-link" href="/lisa_landing/services">Services</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="#">Contact</a>
+              <a class="nav-link" href="/lisa_landing/contact">Contact</a>
             </li>
           </ul>
         </div>
@@ -42,7 +42,7 @@
     <header class="intro-header">
       <div class="container">
         <div class="intro-message">
-          <h1>Landing Page</h1>
+          <h1>ABOUT PAGE</h1>
           <h3>A Template by Start Bootstrap</h3>
           <hr class="intro-divider">
           <ul class="list-inline intro-social-buttons">
@@ -83,7 +83,7 @@
               for providing the photographs that you see in this template. Visit their website to become a member.</p>
           </div>
           <div class="col-lg-5 mr-auto">
-            <img class="img-fluid" src="{% static 'src/img/ipad.png' %}" alt="">
+            <img class="img-fluid" src="{% static 'lisa_landing/img/ipad.png' %}" alt="">
           </div>
         </div>
 
@@ -104,7 +104,7 @@
               <a target="_blank" href="http://www.psdcovers.com/">PSDCovers</a>! Visit their website to download some of their awesome, free photoshop actions!</p>
           </div>
           <div class="col-lg-5 ml-auto order-lg-1">
-            <img class="img-fluid" src={% static 'src/img/dog.png' %} alt="">
+            <img class="img-fluid" src={% static 'lisa_landing/img/dog.png' %} alt="">
           </div>
         </div>
 
@@ -128,7 +128,7 @@
               <a target="_blank" href="http://fontawesome.io">icons from Font Awesome</a>.</p>
           </div>
           <div class="col-lg-5 mr-auto ">
-            <img class="img-fluid" src={% static 'src/img/phones.png' %} alt="">
+            <img class="img-fluid" src={% static 'lisa_landing/img/phones.png' %} alt="">
           </div>
         </div>
 
