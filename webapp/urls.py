@@ -18,6 +18,7 @@ from . import views
 
 app_name = 'polls'
 urlpatterns = [
+    url(r'^login/$', views.login, name='login'),
     # ex: <site>/polls
     url(r'^$', views.polls, name='home'),
     # ex: <site>/polls/5/

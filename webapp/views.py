@@ -1,11 +1,18 @@
 from django.http.response import HttpResponseRedirect
-from django.shortcuts import render, get_object_or_404
-
+from django.shortcuts import render, get_object_or_404, redirect
 
 # Create your views here.
 from django.urls import reverse
+from django.contrib.auth import authenticate
 
 from webapp.models import Question, Choice
+
+
+def login(request):
+    user = authenticate(request)
+    if user is not None:
+        login(request, user)
+    return redirect('home')
 
 
 def polls(request):

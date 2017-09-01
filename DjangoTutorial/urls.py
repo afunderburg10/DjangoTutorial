@@ -20,8 +20,6 @@ from django.contrib.auth import views as auth_views
 
 urlpatterns = [
     url(r'^$', TemplateView.as_view(template_name='home.html'), name='home'),
-    # url(r'^login/$', auth_views.login, name='login'),
-    # url(r'^logout/$', auth_views.logout, name='logout'),
     url(r'^example_template', TemplateView.as_view(template_name='example_template.html'), name='example_template'),
     url(r'^todo/', include('todo.urls')),
     url(r'^polls/', include('webapp.urls')),
