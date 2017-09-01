@@ -43,7 +43,7 @@ def new(request):
             todo_item.create_date = timezone.now()
             todo_item.save()
             return redirect('todo:home')
-            # Put this back when the detail veiw is implemented
+            # Put this back when the detail view is implemented
             # return redirect('todo:detail', pk=todo_item.pk)
     else:
         # New page visit
@@ -68,7 +68,7 @@ def edit(request, pk):
             todo_item = form.save(commit=False)
             todo_item.save()
             return redirect('todo:home')
-            # Put this back when the detail veiw is implemented
+            # Put this back when the detail view is implemented
             # return redirect('todo:detail', pk=todo_item.pk)
     else:
         form = ToDoItemForm(instance=todo_item)
